@@ -1,0 +1,591 @@
+<html>
+<body>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+   margin:0;
+   background-color: #43382c;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.uni {
+  font-family: "UnifrakturMaguntia", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.pix {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pixbold {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+        
+.book-section{
+    height: 100vh;
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+}
+.book-section > .container{
+    height: 543px;
+    width: 700px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2%;
+    margin-bottom: 30px;
+    perspective: 1200px;
+}
+.container > .right{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    transition: 0.7s ease-in-out;
+    transform-style: preserve-3d;
+}
+.book-section > .container > .right{
+    right:0;
+    transform-origin: left;
+    border-radius: 10px 0 0 10px;
+}
+.right > figure.front, .right > figure.back{
+    margin: 0;
+    height: 100%;
+    width: 200%;
+    position: absolute;
+    left:0;
+    top:0;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+    background-color: white;
+    overflow: hidden;
+}
+.right > figure.front{
+    background-position: right;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 2px 15px -2px rgba(0,0,0,0.2);
+}
+.right > figure.back{
+    background-position: left;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -2px 2px 15px -2px rgba(0,0,0,0.2);
+    transform: rotateY(180deg);
+}
+.flip{
+    transform: rotateY(-180deg);
+}
+.flip::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 10;
+    width: 200%;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.book-section > button:focus, .book-section > button:active{
+    outline: none;
+}
+.book-section > p{
+    color: rgba(0,0,0,0.7);
+    font-family: calibri;
+    font-size: 24px;
+}
+.book-section > p > a{
+    text-decoration: none;
+    color: #ef9f00;
+}
+.book-section > button:hover{
+    background-color: #ef9f00;
+    color: #fff;
+}
+.front#cover, .back#back-cover{
+    background-color: #ffcb63;
+    font-family: calibri;
+    text-align: left;
+    padding: 0 30px;
+}
+.front#cover h1{
+    color: #fff;
+}
+.front#cover p{
+    color: rgba(0,0,0,0.8);
+    font-size: 14px;
+}
+
+.hoja{
+    padding: 10px;
+}
+
+.txt-hora{
+    font-size: 40px;
+    text-align: left;
+    padding: 15px;
+    margin-left: 25px;
+}
+
+.txt-narracion{
+    font-size: 20px;
+    padding: 20px;
+    line-height: 1.3;
+}
+
+.arrow{
+    width: 50px;
+    height: 50px;
+}
+
+.rotated{
+    transform: rotate(-180deg);
+}
+
+.card {
+  color: #110e00; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 400px;
+  background: #88836a;
+  transform-style: preserve-3d;
+  transform: translate(-50%,-50%) perspective(2000px);
+  box-shadow: inset 300px 0 50px rgba(56, 44, 21, 0.5), 20px 0 60px rgba(114, 96, 14, 0.5);
+  transition: 1s;
+}
+
+.card:hover {
+  transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2);
+  box-shadow: inset 20px 0 50px rgba(66, 55, 16, 0.5), 0 10px 100px rgba(74, 61, 10, 0.5);
+}
+
+.card:before {
+  content:'';
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #88836a;
+  transform-origin: bottom;
+  transform: skewX(-45deg);
+}
+
+.card:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 5px;
+  height: 100%;
+  background: #76715f;
+  transform-origin: left;
+  transform: skewY(-45deg);
+}
+
+.card .imgBox {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-origin: left;
+  transition: .7s;
+}
+
+.card .bark {
+  position: absolute;
+  background: #a09876;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: .7s;
+}
+
+.card .imgBox img {
+  min-width: 250px;
+  max-height: 400px;
+}
+
+.card:hover .imgBox {
+  transform: rotateY(-135deg);
+}
+
+.card:hover .bark {
+  opacity: 1;
+  transition: .6s;
+  box-shadow: 300px 200px 100px rgba(58, 51, 32, 0.4) inset;
+}
+
+.card .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 0 0 0 10px;
+  z-index: -1;
+  margin-top: 70px;
+}
+
+.card .details p {
+  font-size: 20px;
+  line-height: 5px;
+  transform: rotate(-10deg);
+  padding: 20px 0 0 20px;
+}
+
+.card .details h4 {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.btn-start {
+    transform: rotate(-10deg);
+    margin:5px;
+    margin-left: 50px;
+    font-size: 25px;
+    border: 3px;
+    border-color: #76715f;
+    background-color: transparent;
+    border-radius: 10px;
+    padding:5px 8px;
+}
+
+.btn-start:hover{
+    transition: .5s;
+    color: #746215;
+   
+}
+
+.story-content {
+    display: none;
+}
+.story {
+    display: none;
+}
+
+.div-img{
+    width: 60%;
+    padding-right: 60px;
+}
+
+.divider {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+            
+        </style>
+    </head>
+    <div id="camino">
+        <!-- movable character here game-->
+    </div>
+    
+        <div id="start">
+            <div id="book"><!-- libro que se abre if btn clicked and fade to black the start div -->
+                <div class="card">
+                    <div class="imgBox">
+                      <div class="bark"></div>
+                      <img src="https://media.istockphoto.com/id/1357100188/photo/antique-leather-bound-book-cover-texture-ancient-bible-cover-early-18th-century.jpg?s=612x612&w=0&k=20&c=2u45-U_Eb-A7gsVakoyBfP5RG24SlbdzEgXCmXdq-40=">
+                    </div>
+                    <div class="details">
+                      
+                      <p class="uni">La biblioteca es una cárcel mágica,  </p>
+                      <p class="uni"> llena de tesoros y sabiduría, </p>
+                      <p class="uni"> pero también de peligros </p>
+                      <p class="uni"> y laberintos.</p>
+                      <p class="uni"> ¿Te atreves a entrar?.</p>
+                      <button id="btn-start" class="btn-start uni">Seguir leyendo</button>
+
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="story-content" id="story-content">
+
+            <div id="story" class="story">
+                
+                <div class="book-section">
+                    <h1 class="pixbold"> Fragmento del manuscrito de Dom Adso de Melk
+                    </h1>
+                    <div class="container">
+                    <div class="right">
+                            <figure class="back" id="back-cover" style="background-image: url(file:///Users/ashleeyin/Downloads/cover.jpeg); background-size: 100%;";></figure>
+                            <figure class="front" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">     
+                        </figure>
+                        </div>
+                    <div class="right">
+                        <figure class="back" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">             
+                            <div class="hoja">
+                                <h2 class="txt-hora">XV COMPLETAS</h2>
+                                <p class="txt-narracion"> Resumen dialogo aaa "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            </div>
+                        </figure>
+                        <figure class="front" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">
+                        </figure>
+                    </div>
+                        <div class="right">
+                        <figure class="back" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">             
+                            <div class="hoja">
+                                <h2 class="txt-hora">XII VISPERAS</h2>
+                                <p class="txt-narracion"> Resumen dialogo aaa "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            </div>
+                        </figure>
+                        <figure class="front" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">      
+                        </figure>
+                    </div>
+                        <div class="right">
+                            <figure class="back" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">             
+                            <div class="hoja">
+                                <h2 class="txt-hora">VIIII NONA</h2>
+                                <p class="txt-narracion"> Resumen dialogo aaa "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            </div>
+                        </figure>
+                            <figure class="front" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">
+                            
+                        </figure>
+                        </div>
+                        <div class="right">
+                        <figure class="back" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">
+                            <div class="hoja">
+                                <h2 class="txt-hora">VI SEXTA</h2>
+                                <p class="txt-narracion"> Resumen dialogo aaa "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            </div>
+                        </figure>
+                        <figure class="front" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">   
+                        </figure>
+                    </div>
+                    <div class="right">
+                        <figure class="back" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">
+                            <div class="hoja">
+                                <h2 class="txt-hora">III TERCIA</h2>
+                                <p class="txt-narracion"> Resumen dialogo aaa "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            </div>
+                        </figure>
+                        
+                        <figure class="front" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">
+                            <div class="item-frame">
+                                <button class="item">click me</button>
+                            </div>
+                        </figure>
+                    </div>
+                        <div class="right">
+                            
+                            <figure class="back" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">
+                            <div class="hoja">
+                                <h2 class="txt-hora pixbold ">I PRIMA</h2>
+                                <p class="txt-narracion pix"> Resumen dialogo aaa "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            </div>
+                        </figure>
+            
+                            <figure class="front" id="cover" style="background-image: url(file:///Users/ashleeyin/Downloads/cover.jpeg); background-size: 100%;">
+                                <h1></h1>
+                                <p></p>
+                                
+                            </figure>
+                        </div>
+                    </div>
+                    <div>
+                    <img onclick="turnLeft()" class="arrow" src="https://static.thenounproject.com/png/801789-200.png">
+                    <img onclick="turnRight()" class="arrow rotated" src="https://static.thenounproject.com/png/801789-200.png">
+                </div>
+                    <br/>
+                </div>
+
+            </div>
+            
+            <div class="divider">
+                <img class="div-img" src="https://static.vecteezy.com/system/resources/previews/024/655/747/original/golden-luxury-separator-png.png">
+            </div>
+            
+
+            <div class="simbolos">
+                <!-- simbolos are hidden and only shown when found in the scene, maybe add btn to reveal them -->
+                <div class="simbolo" id="">
+                    <img class="item2 hidden" id="">
+                    <div class="textosimb">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+        
+                <div class="simbolo" id="">
+                    <img class="item2 hidden" id="">
+                    <div class="textosimb">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+        
+                <div class="simbolo" id="">
+                    <img class="item2 hidden" id="">
+                    <div class="textosimb">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+        
+                <div class="simbolo" id="">
+                    <img class="item2 hidden" id="">
+                    <div class="textosimb">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+        
+                <div class="simbolo" id="">
+                    <img class="item2 hidden" id="">
+                    <div class="textosimb">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+        
+                <div class="simbolo" id="">
+                    <img class="item2 hidden" id="">
+                    <div class="textosimb">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="timeline">
+                <!-- recap de todas las narraciones -->
+                <!-- make each hour una trompeta, hear a sound when clicked. when hovered show el resumen de la hora-->
+                <!-- piedra armilar -->
+        
+                <div class="evento">
+                    <img class="trompeta" onclick="" >
+        
+                    <div class="minievento hidden">
+                        <h2>Hora</h2>
+                        <p>narracion</p>
+                        <img> <!-- imagen de lo q pasa-->
+        
+                    </div>
+        
+                </div>
+        
+            </div>
+
+            <div class="personajes">
+                <!-- fichas de los personajes, when clicked will say a quote narrado por elkin -->
+        
+                <div class="ficha">
+                    <img>
+                    <p></p>
+                </div>
+        
+            </div>
+
+            <div class="opiniones">
+                <!-- all blocked hasta que se encuentren en las escenas. pixel art de nosotros, quote favorito, opinion-->
+                <p>Encuentra a los 3 monjes falsos para desbloquear las apreciaciones. </p>
+        
+            </div>
+        
+            <div class="comments">
+        
+            </div>
+
+        </div>
+
+</body>
+
+<script>
+    var right = document.getElementsByClassName("right");
+    var si = right.length;
+    var z=1;
+    turnRight();
+    function turnRight()
+    {
+        if(si>=1){
+            si--;
+        }
+        else{
+            si=right.length-1;
+            function sttmot(i){
+                setTimeout(function(){right[i].style.zIndex="auto";},300);
+            }
+            for(var i=0;i<right.length;i++){
+                right[i].className="right";
+                sttmot(i);
+                z=1;
+            }
+        }
+        right[si].classList.add("flip");
+        z++;
+        right[si].style.zIndex=z;
+    }
+    function turnLeft()
+    {
+        if(si<right.length){
+            si++;
+        }
+        else{
+            si=1;
+            for(var i=right.length-1;i>0;i--){
+                right[i].classList.add("flip");
+                right[i].style.zIndex=right.length+1-i;
+            }
+        }
+        right[si-1].className="right";
+        setTimeout(function(){right[si-1].style.zIndex="auto";},350);
+    }
+
+    function start() {
+        var book = document.getElementById("book");
+        var start = document.getElementById("start");
+        var story = document.getElementById("story");
+        //book animation plays and then start components fades, story is shown and sfx starts playing
+    }
+
+    function addItem(x) {
+        //make x name item display disappear when clicked 
+        document.getElementById(x).style.display("hidden");
+        //show x2 in the item bar based on the value for x
+        if (x === "") {
+
+        };
+    }
+
+    $( "#btn-start" ).on( "click", function() {
+        $( "#book" ).fadeOut( "slow", function() {
+        });
+        $("#story-content").show("slow");
+        $("#story").show("slow");
+});
+</script>
+</html>
