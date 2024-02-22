@@ -312,7 +312,6 @@ font-family: "Pixelify Sans", sans-serif;
 .divider {
     display: flex;
     justify-content: center;
-    margin: 20px 10px;
 }
 
 .simbolos{
@@ -321,6 +320,8 @@ font-family: "Pixelify Sans", sans-serif;
     flex-direction: column;
     text-align: center;
     padding: 20px;
+    height: 100%;
+    margin: 10px;
 }
 
 .simbolo{
@@ -445,7 +446,57 @@ h3{
     opacity: 0;
   }
 
+  /*profile cards*/
+  .personajes{
+      margin: 10px;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+  }
+
+  .ficha{
+    text-align: center;
+    background-color: #7463158d;
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    background-image: url("file:///Users/ashleeyin/Downloads/paper.png");
+    background-size: 100%;
+    margin: 20px;
+    
+  }
+
+  .ficha h3 {
+      margin: 0;
+  }
+
+  .ficha p {
+      margin: 0;
+      padding: 10px 30px;
+  }
+
+  .info{
+      text-align: left;
+      padding: 0 40px;
+      margin: 0;
+      margin-bottom: 10px;
+  }
  
+  .profile{
+      width:50%;
+      border-radius: 20px;
+      margin: 10px;
+  }
+
+  .profile:hover{
+      cursor: pointer;
+      opacity: 0.6;
+      transition: .3s;
+  }
 
 
 /* starts items positions*/
@@ -765,8 +816,43 @@ h3{
                 <!-- fichas de los personajes, when clicked will say a quote narrado por elkin -->
         
                 <div class="ficha">
-                    <img>
-                    <p></p>
+                    <img class="profile" src="file:///Users/ashleeyin/Downloads/guillermo.jpeg">
+                    <h3 class="pixbold">Guillermo de Baskerville</h3>
+                    <p><b>Ex-Inquisidor y maestro de Adso</b></p>
+                    <p>"Es mejor que el que nos infunde miedo tenga más miedo que nosotros.
+                        "</p>
+                    <div class="info">
+                    <p><b>Edad:</b> 55</p>
+                    <p><b>Características: </b>Alto, mirada aguda, pecas, de expresión vigilante</p>
+                    </div>
+                </div>
+
+                <div class="ficha">
+                    <img class="profile" src="file:///Users/ashleeyin/Downloads/adso.jpeg">
+                    <h3 class="pixbold">Adso de Melk</h3>
+                    <p><b>Hijo del barón de Melk y discípulo de Guillermo                    </b></p>
+                    <p>"Me sentía como un soldado de Cristo en lucha contra todas las legiones del infierno
+                        "</p>
+                    <div class="info">
+                    <p><b>Edad:</b> 17</p>
+                    <p><b>Características: </b>Jóven de facciones atractivas y mirada inocente
+                    </p>
+                    </div>
+                </div>
+
+                <div class="ficha">
+                    <img class="profile" src="file:///Users/ashleeyin/Downloads/bernardo.jpeg">
+                    <h3 class="pixbold">Bernardo Gui</h3>
+                    <p><b>¡Una mujer en este lugar sagrado! ¡Y con un monje!
+
+                    </b></p>
+                    <p>"Es mejor que el que nos infunde miedo tenga más miedo que nosotros.
+                        "</p>
+                    <div class="info">
+                    <p><b>Edad:</b> 57</p>
+                    <p><b>Características: </b> Expresión ceñida y nariz fileña
+                    </p>
+                    </div>
                 </div>
         
             </div>
