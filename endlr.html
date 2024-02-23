@@ -1,5 +1,5 @@
 <html>
-<body>
+<body onload="playbg()">
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -301,6 +301,7 @@ font-family: "Pixelify Sans", sans-serif;
 }
 .story {
     display: none;
+    margin-bottom: 300px;
 }
 
 .div-img{
@@ -322,13 +323,14 @@ font-family: "Pixelify Sans", sans-serif;
     padding: 20px;
     height: 100%;
     margin: 10px;
+    margin-bottom: 250px;
 }
 
 .simbolo{
     margin: 10px 20px;
     padding: 20px;
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
 }
 
 .item2{
@@ -520,12 +522,12 @@ h3{
 
   .scroll-container{
       position: absolute;
-    top: 1600;
     right: 100;
     width: 90%;
     height: 400px;
     display: flex;
     justify-content: center;
+    margin-bottom: 300;
   }
 
   .scroll{
@@ -548,18 +550,16 @@ h3{
   }
 
 #primaAngel{
-    position: absolute;
     width: 150px;
     height: 200px;
-    top: 2050px;
     cursor: pointer;
+    margin-top: 200px;
 }
 
 #terciaAngel{
     position: absolute;
     width: 120px;
     height: 140px;
-    top: 2200px;
     cursor: pointer;
     left: 160;
 }
@@ -568,7 +568,6 @@ h3{
     position: absolute;
     width: 180px;
     height: 200px;
-    top: 2100px;
     cursor: pointer;
     left: 300;
 }
@@ -577,7 +576,7 @@ h3{
     position: absolute;
     width: 220px;
     height: 400px;
-    top: 2000px;
+    top: 2500px;
     cursor: pointer;
     left: 620;
 }
@@ -586,7 +585,6 @@ h3{
     position: absolute;
     width: 220px;
     height: 200px;
-    top: 2100px;
     cursor: pointer;
     right: 230;
 }
@@ -595,7 +593,6 @@ h3{
     position: absolute;
     width: 150px;
     height: 180px;
-    top: 2200px;
     cursor: pointer;
     right: 80;
 }
@@ -605,6 +602,18 @@ h3{
     justify-content: center;
     display:flex;
 
+}
+
+.opinion{
+    background-color: #746215;
+    display: flex;
+    margin: 20px;
+    border-radius: 10px;
+    padding-right: 50px;
+}
+
+.opinion-img{
+    width: 300px;
 }
 
 /* starts items positions*/
@@ -630,7 +639,7 @@ h3{
                       <p class=""> llena de tesoros   </p>
                       <p class=""> y sabiduría, pero también </p>
                       <p class=""> de peligros y laberintos.</p>
-                      <p class=""> ¿Te atreves a entrar?.</p>
+                      <p class=""> ¿Te atreves a entrar?</p>
                       <button id="btn-start" class="btn-start pix bold">Seguir leyendo</button>
 
                     </div>
@@ -795,7 +804,7 @@ h3{
                         <img class="item2" src="https://od.lk/s/NTdfODk2NzgyMjBf/gafas.png">    
                         <div class="textosimb">
                             <h3 class="pixbold">Gafas</h3>
-                            <p></p>
+                            <p>Simbolizan el conocimiento, la innovación técnica y el progreso científico. Algo que resaltar es que estas sobreviven a la destrucción de la abadía, simbolizando así la supervivencia del saber, a pesar de todas las amenazas sufridas.</p>
                         </div>
                     </div>
                 </div>
@@ -814,7 +823,7 @@ h3{
                         <img class="item2" src="https://od.lk/s/NTdfODk2NzgyMTlf/esfera.png">    
                         <div class="textosimb">
                             <h3 class="pixbold">Esfera Armilar</h3>
-                            <p></p>
+                            <p>Simboliza la cuarta trompeta del apocalipsis en que dice que fue herida la tercera parte del sol, y la tercera parte de la luna, y la tercera parte de las estrellas. Se aproxima el fin. </p>
                         </div>
                     </div>
                 </div>
@@ -833,17 +842,20 @@ h3{
                         <img class="item2" src="https://od.lk/s/NTdfODk2NzgyNzBf/libro.png">    
                         <div class="textosimb">
                             <h3 class="pixbold">Libro Envenenado</h3>
-                            <p></p>
+                            <p>Simboliza una amenaza intelectual y física, que su lectura conduce a la muerte. El conocimiento no puede ser concebido por el peligro atribuido a “La poética” y a muchos libros por sus grandes conocimientos.
+                            </p>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="wrapper">
 
                 <div class="simbolo">
                     <div class="mystery" id="biblioteca2box">
                         <img class="item2" src="https://cdn.pixabay.com/photo/2023/07/15/02/24/question-mark-8127954_1280.png">
                         <div class="textosimb">
                             <h3 class="pixbold">???</h3>
-                            <p>Y era un laberinto...</p>
+                            <p>Era un laberinto...</p>
                         </div>
                     
                     </div>
@@ -852,7 +864,7 @@ h3{
                         <img class="item2" src="https://od.lk/s/NTdfODk2NzgyMTdf/biblioteca.png">    
                         <div class="textosimb">
                             <h3 class="pixbold">Biblioteca</h3>
-                            <p></p>
+                            <p>Ésta y el finis Africae simbolizan el estricto control que existe en la abadía sobre el conocimiento. Un laberinto en el que la salida es la idea perfecta del conocimiento religioso, donde se distingue el bien del mal.</p>
                         </div>
                     </div>
                 </div>
@@ -871,7 +883,7 @@ h3{
                         <img class="item2" src="https://od.lk/s/NTdfODk2NzgyMThf/cartas.png">    
                         <div class="textosimb">
                             <h3 class="pixbold">Cartas de Remigio</h3>
-                            <p></p>
+                            <p>Las cartas dan a entender cómo el pasado nunca puede ser olvidado, pero también se puede interpretar como un intento fallido de una nueva vida después del pecado. </p>
                         </div>
                     </div>
                 </div>
@@ -890,7 +902,7 @@ h3{
                         <img class="item2" src="https://od.lk/s/NTdfODk2NzgyMjJf/mujer.png">    
                         <div class="textosimb">
                             <h3 class="pixbold">Mujer</h3>
-                            <p></p>
+                            <p>Simboliza la lujuria y el pecado. Un ente que es el origen del mal para cualquier hombre, menos aquellas que logran ser reconocidas como santas.</p>
                         </div>
                     </div>
                 </div>
@@ -1083,6 +1095,33 @@ h3{
                 <!-- all blocked hasta que se encuentren en las escenas. pixel art de nosotros, quote favorito, opinion-->
 <!--                 <p>Encuentra a los 3 monjes falsos para desbloquear las apreciaciones. </p>
  -->        <h2 class="pixbold" style="text-align: center;">Apreciaciones</h2>
+                <div class="opinion">
+                    <img class="opinion-img" src="https://od.lk/s/NTdfODk2OTQwMTRf/mariana.png">
+                    <div>
+                        <h3 class="pixbold">Santa Mariana</h3>
+                        <p>Fue muy difícil comprender la obra al principio, incluso un poco frustrante. Pero mientras leía me di cuenta de las dos caras de la moneda. Es sorprendente comparar la imagen de un monje, un “santo”, con la imagen que podemos ver mediante avanzamos en la lectura, a muchos egoístas que se lucran por medio de otras personas, y otros que simplemente creen que su juicio es el juicio de Dios y por esto no deben ser acusados de “pecado”.</p>
+                    </div>
+                </div>
+
+                <div class="opinion">
+                    <img class="opinion-img" src="https://od.lk/s/NTdfODk2OTQxNTdf/ashlee.png">
+                    <div>
+                        <h3 class="pixbold">Monja Ashlee</h3>
+                        <p>Me parece muy interesante ver cómo la vida y muerte de los monjes podía ser definida por las palabras de un Inquisidor. Aquí fue donde entendí en su mayoría sobre por qué Guillermo consideraba que él no era nadie para juzgar el bien o el mal, ya que se ve a Bernardo cegado por la lujuria de la justicia, queriendo purificar la abadía sin darle mucha importancia a los que realmente eran los pecadores. 
+                        </p>
+                    </div>
+                </div>
+
+                <div class="opinion">
+                    <img class="opinion-img" src="https://od.lk/s/NTdfODk2OTQwMTFf/elkin.png" style="width: 250px; margin-left: 30px;">
+                    <div>
+                        <h3 class="pixbold">Barón de Melk</h3>
+                        <p> El ver a los monjes, que se supone que eran muy cultos y puros, tirarse insultos y pelear como perros me dio mucha risa y muestra lo hipócritas y aparentadores que eran. Por fuera todo se veía perfecto y santo mientras que en realidad todos eran grandes pecadores. 
+                        </p>
+                    </div>
+                </div>
+
+                
 
             </div>
         
@@ -1095,6 +1134,11 @@ h3{
 </body>
 
 <script>
+
+    function playbg(){
+        //bg.play()
+    }
+
     var right = document.getElementsByClassName("right");
     var si = right.length;
     var z=1;
@@ -1200,12 +1244,6 @@ $(".angel").hover(function(){
   });
 });
 
-function init(){
-    bg.play()
-}
-
-document.onload = init()
-
 //audios
 const guillermo = new Audio("https://od.lk/s/NTdfODk2NzgzNTZf/guillermo.mp3");
 const adso = new Audio("https://od.lk/s/NTdfODk2NzgzNTRf/adso.ogg");
@@ -1217,9 +1255,8 @@ const remigio = new Audio("https://od.lk/s/NTdfODk2NzgzNTlf/remigio.ogg");
 const salvatore = new Audio("https://od.lk/s/NTdfODk2NzgzNjBf/salvatore.ogg");
 const malaquias = new Audio("https://od.lk/s/NTdfODk2NzgzNThf/malaquias.ogg");
 const flip = new Audio("https://od.lk/s/NTdfODk2NzkyOTBf/flip.mp3");
-const trompeta = new Audio("https://od.lk/s/NTdfODk2ODExMDJf/trompeta.mp3")
-const bg = new Audio("https://od.lk/s/NTdfODk2ODkyOTNf/bg.mp3")
-bg.loop = true
+const trompeta = new Audio("https://od.lk/s/NTdfODk2ODExMDJf/trompeta.mp3");
+const bg = new Audio("https://od.lk/s/NTdfODk2ODkyOTNf/bg.mp3");
 
 </script>
 </html>
