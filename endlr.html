@@ -360,6 +360,11 @@ h2{
     flex-direction: column;
     text-align: center;
     padding: 20px;
+    background-image: url(https://od.lk/s/NTdfODk2ODAwNDZf/trompetas.png);
+    height: 700px;
+    width: 100%;
+    background-size: 100%;
+    margin: 40px 0px;
 }
 
 h3{
@@ -452,7 +457,7 @@ h3{
       padding: 10px;
       display: flex;
       justify-content: center;
-      flex-direction: row;
+      flex-direction: column;
   }
 
   .ficha{
@@ -464,7 +469,7 @@ h3{
     flex-direction: column;
     align-items: center;
     width: 30%;
-    background-image: url("file:///Users/ashleeyin/Downloads/paper.png");
+    background-image: url("https://od.lk/s/NTdfODk2NzgyMTRf/paper.png");
     background-size: 100%;
     margin: 20px;
     
@@ -498,6 +503,109 @@ h3{
       transition: .3s;
   }
 
+  .torch{
+    position: absolute;
+    top: 200;
+    z-index: 9;
+  }
+
+  .torch2{
+    position: absolute;
+    top: 200;
+    right: 0;
+    z-index: 9;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+
+  .scroll-container{
+      position: absolute;
+    top: 1600;
+    right: 100;
+    width: 90%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .scroll{
+      display: flex;
+  }
+
+  .scroll-p{
+    position: absolute;
+    top: 15%;
+    width: 40%;
+    display: none;
+    flex-direction: column;
+  }
+
+  .scroll-p h3{
+      color: #9b841d;
+      margin-bottom: 20px;
+
+
+  }
+
+#primaAngel{
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    top: 2050px;
+    cursor: pointer;
+}
+
+#terciaAngel{
+    position: absolute;
+    width: 120px;
+    height: 140px;
+    top: 2200px;
+    cursor: pointer;
+    left: 160;
+}
+
+#sextaAngel{
+    position: absolute;
+    width: 180px;
+    height: 200px;
+    top: 2100px;
+    cursor: pointer;
+    left: 300;
+}
+
+#nonaAngel{
+    position: absolute;
+    width: 220px;
+    height: 400px;
+    top: 2000px;
+    cursor: pointer;
+    left: 620;
+}
+
+#visperasAngel{
+    position: absolute;
+    width: 220px;
+    height: 200px;
+    top: 2100px;
+    cursor: pointer;
+    right: 230;
+}
+
+#completasAngel{
+    position: absolute;
+    width: 150px;
+    height: 180px;
+    top: 2200px;
+    cursor: pointer;
+    right: 80;
+}
+
+.linea{
+    margin: 40px 20px;
+    justify-content: center;
+    display:flex;
+
+}
 
 /* starts items positions*/
             
@@ -513,7 +621,7 @@ h3{
                 <div class="card">
                     <div class="imgBox">
                       <div class="bark"></div>
-                      <img src="file:///Users/ashleeyin/Downloads/cover2.jpeg">
+                      <img src="https://od.lk/s/NTdfODk2NzgyMzJf/cover2.jpeg">
                     </div>
                     <div class="details pix">
                       
@@ -532,6 +640,9 @@ h3{
         </div>
 
         <div class="story-content" id="story-content">
+            <img class="torch" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8627def1-872a-4402-b733-9af0a6c43a30/d64qz0s-80c2d5bd-00eb-4dfd-89fd-29c35c775e8a.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzg2MjdkZWYxLTg3MmEtNDQwMi1iNzMzLTlhZjBhNmM0M2EzMFwvZDY0cXowcy04MGMyZDViZC0wMGViLTRkZmQtODlmZC0yOWMzNWM3NzVlOGEuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZxGSfhhVngB-eZvvaJXLrvPiFATmaKXnYgCpIgzFv8Y">
+            <img class="torch2" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8627def1-872a-4402-b733-9af0a6c43a30/d64qz0s-80c2d5bd-00eb-4dfd-89fd-29c35c775e8a.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzg2MjdkZWYxLTg3MmEtNDQwMi1iNzMzLTlhZjBhNmM0M2EzMFwvZDY0cXowcy04MGMyZDViZC0wMGViLTRkZmQtODlmZC0yOWMzNWM3NzVlOGEuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZxGSfhhVngB-eZvvaJXLrvPiFATmaKXnYgCpIgzFv8Y">
+
 
             <div id="story" class="story">
                 
@@ -540,10 +651,10 @@ h3{
                     </h2>
                     <div class="container">
                     <div class="right">
-                            <figure class="back" id="back-cover" style="background-image: url(file:///Users/ashleeyin/Downloads/cover2.jpeg); background-size: 105%;";></figure>
+                            <figure class="back" id="back-cover" style="background-image: url(https://od.lk/s/NTdfODk2NzgyMzJf/cover2.jpeg); background-size: 105%;";></figure>
                             <figure class="front centered" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">     
                                 <div>
-                                    <img class="blur" src="file:///Users/ashleeyin/Downloads/completas.jpeg" style="width: 95%;">
+                                    <img class="blur" src="https://od.lk/s/NTdfODk2NzgyMjhf/completas.jpeg" style="width: 95%;">
                                 </div>
                             </figure>
                         </div>
@@ -557,7 +668,7 @@ h3{
                         </figure>
                         <figure class="front centered" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">
                             <div>
-                                <img class="blur" src="file:///Users/ashleeyin/Downloads/visperas.jpeg" style="width: 95%;">
+                                <img class="blur" src="https://od.lk/s/NTdfODk2NzgyMjVf/visperas.jpeg" style="width: 95%;">
                             </div>
                             <div class="item-frame">
                                 <div onclick="reveal('mujer')" id="mujer"></div>
@@ -575,10 +686,10 @@ h3{
                         </figure>
                         <figure class="front centered" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">      
                             <div>
-                                <img class="blur" src="file:///Users/ashleeyin/Downloads/nona.jpeg" style="width: 95%;">
+                                <img class="blur" src="https://od.lk/s/NTdfODk2NzgyMzVf/nona.jpeg" style="width: 95%;">
                             </div>
                             <div class="item-frame">
-                                <img onclick="reveal('cartas')" id="cartas" src="file:///Users/ashleeyin/Downloads/cartas.png">
+                                <img onclick="reveal('cartas')" id="cartas" src="https://od.lk/s/NTdfODk2NzgyMThf/cartas.png">
                             </div>
                         </figure>
                     </div>
@@ -592,10 +703,10 @@ h3{
                         </figure>
                             <figure class="front centered" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">
                                 <div>
-                                    <img class="blur" src="file:///Users/ashleeyin/Downloads/sexta.jpeg" style="width: 95%;">
+                                    <img class="blur" src="https://od.lk/s/NTdfODk2NzgyMzdf/sexta.jpeg" style="width: 95%;">
                                 </div>
                                 <div class="item-frame">
-                                    <img onclick="reveal('esfera')" id="esfera" src="file:///Users/ashleeyin/Downloads/esfera.png">
+                                    <img onclick="reveal('esfera')" id="esfera" src="https://od.lk/s/NTdfODk2NzgyMTlf/esfera.png">
                                 </div>
                                 <div class="item-frame">
                                     <div  onclick="reveal('biblioteca')" id="biblioteca"></div>
@@ -611,10 +722,10 @@ h3{
                         </figure>
                         <figure class="front centered" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">   
                             <div>
-                                <img class="blur" src="file:///Users/ashleeyin/Downloads/tercia.jpeg" style="width: 95%;">
+                                <img class="blur" src="https://od.lk/s/NTdfODk2NzgyMjRf/tercia.jpeg" style="width: 95%;">
                             </div>
                             <div class="item-frame">
-                                <img onclick="reveal('libro')" id="libro" src="file:///Users/ashleeyin/Downloads/libro.png">
+                                <img onclick="reveal('libro')" id="libro" src="https://od.lk/s/NTdfODk2NzgyNzBf/libro.png">
                             </div>
                         </figure>
                     </div>
@@ -629,10 +740,10 @@ h3{
                         
                         <figure class="front centered" style="background-image: url(https://e0.pxfuel.com/wallpapers/383/260/desktop-wallpaper-old-book-page-by-daviddiazolivares-for-your-mobile-tablet-explore-book-page-that-looks-like-books-old-book-book-for-walls-old-book-pages.jpg); background-size: 100%;">
                             <div>
-                                <img class="blur" src="file:///Users/ashleeyin/Downloads/prima.jpeg" style="width: 95%;">
+                                <img class="blur" src="https://od.lk/s/NTdfODk2NzgyMzZf/prima.jpeg" style="width: 95%;">
                             </div>
                              <div class="item-frame">
-                                <img onclick="reveal('gafas')" id="gafas" src="file:///Users/ashleeyin/Downloads/gafas.png">
+                                <img onclick="reveal('gafas')" id="gafas" src="https://od.lk/s/NTdfODk2NzgyMjBf/gafas.png">
                             </div>
                         </figure>
                     </div>
@@ -646,7 +757,7 @@ h3{
                             </div>
                         </figure>
             
-                            <figure class="front" id="cover" style="background-image: url(file:///Users/ashleeyin/Downloads/cover2.jpeg); background-size: 105%;">
+                            <figure class="front" id="cover" style="background-image: url(https://od.lk/s/NTdfODk2NzgyMzJf/cover2.jpeg); background-size: 105%;">
                                 
                             
                                 
@@ -654,19 +765,14 @@ h3{
                         </div>
                     </div>
                 <div>
-                    <img onclick="turnLeft()" class="arrow rotated2" src="https://static.thenounproject.com/png/801789-200.png">
-                    <img onclick="turnRight()" class="arrow rotated" src="https://static.thenounproject.com/png/801789-200.png">
+                    <img onclick="turnLeft(); flip.play()" class="arrow rotated2" src="https://static.thenounproject.com/png/801789-200.png">
+                    <img onclick="turnRight(); flip.play()" class="arrow rotated" src="https://static.thenounproject.com/png/801789-200.png">
                 </div>
                     <br/>
                 </div>
 
             </div>
-            
-            <div class="divider">
-                <img class="div-img" src="https://static.vecteezy.com/system/resources/previews/024/655/747/original/golden-luxury-separator-png.png">
-            </div>
-            
-            
+          
 
             <div class="simbolos">
                 <!-- simbolos are hidden and only shown when found in the scene, maybe add btn to reveal them -->
@@ -686,7 +792,7 @@ h3{
                     </div>
 
                     <div style="display: none;" id="gafas2">
-                        <img class="item2" src="file:///Users/ashleeyin/Downloads/gafas.png">    
+                        <img class="item2" src="https://od.lk/s/NTdfODk2NzgyMjBf/gafas.png">    
                         <div class="textosimb">
                             <h3 class="pixbold">Gafas</h3>
                             <p></p>
@@ -705,7 +811,7 @@ h3{
                     </div>
 
                     <div style="display: none;" id="esfera2">
-                        <img class="item2" src="file:///Users/ashleeyin/Downloads/esfera.png">    
+                        <img class="item2" src="https://od.lk/s/NTdfODk2NzgyMTlf/esfera.png">    
                         <div class="textosimb">
                             <h3 class="pixbold">Esfera Armilar</h3>
                             <p></p>
@@ -724,7 +830,7 @@ h3{
                     </div>
 
                     <div style="display: none;" id="libro2">
-                        <img class="item2" src="file:///Users/ashleeyin/Downloads/libro.png">    
+                        <img class="item2" src="https://od.lk/s/NTdfODk2NzgyNzBf/libro.png">    
                         <div class="textosimb">
                             <h3 class="pixbold">Libro Envenenado</h3>
                             <p></p>
@@ -743,7 +849,7 @@ h3{
                     </div>
 
                     <div style="display: none;" id="biblioteca2">
-                        <img class="item2" src="file:///Users/ashleeyin/Downloads/biblioteca.png">    
+                        <img class="item2" src="https://od.lk/s/NTdfODk2NzgyMTdf/biblioteca.png">    
                         <div class="textosimb">
                             <h3 class="pixbold">Biblioteca</h3>
                             <p></p>
@@ -762,7 +868,7 @@ h3{
                     </div>
 
                     <div style="display: none;" id="cartas2">
-                        <img class="item2" src="file:///Users/ashleeyin/Downloads/cartas.png">    
+                        <img class="item2" src="https://od.lk/s/NTdfODk2NzgyMThf/cartas.png">    
                         <div class="textosimb">
                             <h3 class="pixbold">Cartas de Remigio</h3>
                             <p></p>
@@ -781,7 +887,7 @@ h3{
                     </div>
 
                     <div style="display: none;" id="mujer2">
-                        <img class="item2" src="file:///Users/ashleeyin/Downloads/mujer.png">    
+                        <img class="item2" src="https://od.lk/s/NTdfODk2NzgyMjJf/mujer.png">    
                         <div class="textosimb">
                             <h3 class="pixbold">Mujer</h3>
                             <p></p>
@@ -792,31 +898,60 @@ h3{
                 </div>
                 
             </div>
-
+<div class="pixbold linea"> <h2>Línea de Tiempo</h2></div>
             <div class="timeline-wrapper">
-                <!-- recap de todas las narraciones -->
-                <!-- make each hour una trompeta, hear a sound when clicked. when hovered show el resumen de la hora-->
-                <!-- piedra armilar -->
-        
-                <!-- <div class="evento">
-                    <img class="trompeta" onclick="" >
-        
-                    <div class="minievento hidden">
-                        <h2 class="pix">Hora</h2>
-                        <p>narracion</p>
-                        <img>  imagen de lo q pasa
-        
+                <div class="scroll-container">
+                    <img class="scroll" src="https://od.lk/s/NTdfODk2ODAxODVf/longscroll.png">
+                    
+                    <div class="scroll-p" id="primaAngel-tl">
+                        <h3 class="pixbold">I PRIMA</h3>
+                        <p>Se da una fuerte discusión entre las dos órdenes religiosas sobre la pobreza de Jesús que desemboca en una riña.</p>
+                    </div class="scroll-p" id="terciaAngel-tl">
+
+                    <div class="scroll-p" id="terciaAngel-tl">
+                        <h3 class="pixbold">III TERCIA</h3>
+                        <p>Severino le habla a Guillermo sobre un extraño libro que encontró, pero antes de que Guillermo pueda terminar la discusión para ir a leerlo, matan a Severino.</p>
                     </div>
-        
-                </div> -->
+
+                    <div class="scroll-p" id="sextaAngel-tl">
+                        <h3 class="pixbold">VI SEXTA</h3>
+                        <p>Guillermo, Adso y Bencio buscan el libro que había mencionado Severino pensando que estaba escrito en griego. Pero estaban equivocados y cuando regresan a buscarlo, ya lo habían robado.</p>
+                    </div>
+
+                    <div class="scroll-p" id="nonaAngel-tl">
+                        <h3 class="pixbold">VIIII NONA</h3>
+                        <p>Bernardo preside el juicio de Remigio quien admite sus pecados a la fuerza.</p>
+                    </div>
+
+                    <div class="scroll-p" id="visperasAngel-tl">
+                        <h3 class="pixbold">XII VÍSPERAS</h3>
+                        <p>Ubertino huye de la abadía y Bencio confiesa que él robó el libro y se lo entregó a Malaquías.</p>
+                    </div>
+
+                    <div class="scroll-p" id="completasAngel-tl">
+                        <h3 class="pixbold">XV COMPLETAS</h3>
+                        <p>Jorge predica un largo sermón sobre la soberbia, el orgullo y la llegada del fin. Adso llora por la mujer que robó su corazón.</p>
+                    </div>        
+                
+                </div>
+
+                <div class="timeline-btns">
+                    <div class="angel" onclick="angel('primaAngel')" id="primaAngel"></div>
+                    <div class="angel" onclick="angel('terciaAngel')" id="terciaAngel"></div>
+                    <div class="angel" onclick="angel('sextaAngel')" id="sextaAngel"></div>
+                    <div class="angel" onclick="angel('nonaAngel')" id="nonaAngel"></div>
+                    <div class="angel" onclick="angel('visperasAngel')" id="visperasAngel"></div>
+                    <div class="angel" onclick="angel('completasAngel')" id="completasAngel"></div>
+                </div>
         
             </div>
 
             <div class="personajes">
                 <!-- fichas de los personajes, when clicked will say a quote narrado por elkin -->
-        
+                <h2 class="pixbold" style="text-align: center;">Personajes</h2>
+                <div class="wrapper">
                 <div class="ficha">
-                    <img class="profile" src="file:///Users/ashleeyin/Downloads/guillermo.jpeg">
+                    <img class="profile" onclick="guillermo.play()" src="https://od.lk/s/NTdfODk2NzgyMzNf/guillermo.jpeg">
                     <h3 class="pixbold">Guillermo de Baskerville</h3>
                     <p><b>Ex-Inquisidor y maestro de Adso</b></p>
                     <p>"Es mejor que el que nos infunde miedo tenga más miedo que nosotros.
@@ -828,7 +963,7 @@ h3{
                 </div>
 
                 <div class="ficha">
-                    <img class="profile" src="file:///Users/ashleeyin/Downloads/adso.jpeg">
+                    <img class="profile" onclick="adso.play()" src="https://od.lk/s/NTdfODk2NzgyOTRf/adso.jpeg">
                     <h3 class="pixbold">Adso de Melk</h3>
                     <p><b>Hijo del barón de Melk y discípulo de Guillermo                    </b></p>
                     <p>"Me sentía como un soldado de Cristo en lucha contra todas las legiones del infierno
@@ -841,12 +976,10 @@ h3{
                 </div>
 
                 <div class="ficha">
-                    <img class="profile" src="file:///Users/ashleeyin/Downloads/bernardo.jpeg">
+                    <img class="profile" onclick="bernardo.play()" src="https://od.lk/s/NTdfODk2NzgyMjdf/bernardo.jpeg">
                     <h3 class="pixbold">Bernardo Gui</h3>
-                    <p><b>¡Una mujer en este lugar sagrado! ¡Y con un monje!
-
-                    </b></p>
-                    <p>"Es mejor que el que nos infunde miedo tenga más miedo que nosotros.
+                    <p><b>Inquisidor y némesis de Guillermo</b></p>
+                    <p>" ¡Una mujer en este lugar sagrado! ¡Y con un monje!
                         "</p>
                     <div class="info">
                     <p><b>Edad:</b> 57</p>
@@ -854,13 +987,103 @@ h3{
                     </p>
                     </div>
                 </div>
-        
+            </div>
+
+            <div class="wrapper">
+                <div class="ficha">
+                    <img class="profile" onclick="severino.play()" src="https://od.lk/s/NTdfODk2Nzg3NjFf/severino.jpeg">
+                    <h3 class="pixbold">Severino da Sant'Emmerano</h3>
+                    <p><b>Herbolario</b></p>
+                    <p>"Debes venir tú, tengo que mostrarte el libro…
+                        "</p>
+                    <div class="info">
+                    <p><b>Edad:</b> 48</p>
+                    <p><b>Características: </b> Intelectual e italiano
+                    </p>
+                    </div>
+                </div> 
+
+                <div class="ficha">
+                    <img class="profile" onclick="jorge.play()" src="https://od.lk/s/NTdfODk2Nzg3Njhf/jorge.jpeg">
+                    <h3 class="pixbold">Jorge de Burgos</h3>
+                    <p><b> El segundo monje más anciano</b></p>
+                    <p>"La risa es la debilidad, la corrupción, la insipidez de nuestra carne. "</p>
+                    <div class="info">
+                    <p><b>Edad:</b> 92</p>
+                    <p><b>Características: </b> ciego, encorvado, blanco como la nieve
+                    </p>
+                    </div>
+                </div>
+
+                <div class="ficha">
+                    <img class="profile" onclick="remigio.play()" src="https://od.lk/s/NTdfODk2Nzg3Njlf/remigio.jpeg">
+                    <h3 class="pixbold">Remigio da Varagine</h3>
+                    <p><b>Cillerero</b></p>
+                    <p>"¿Esperas salvarte? ¿No sabes que tú también morirás como un hereje?
+                        "</p>
+                    <div class="info">
+                    <p><b>Edad:</b> 51</p>
+                    <p><b>Características: </b> Poca estatura y un poco rechonco
+                    </p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="wrapper">
+                <div class="ficha">
+                    <img class="profile" onclick="salvatore.play()" src="https://od.lk/s/NTdfODk2Nzg4MjRf/salvatore.jpeg">
+                    <h3 class="pixbold">Salvatore</h3>
+                    <p><b>Monje rescatado por Ubertino</b></p>
+                    <p>"¡Zas! ¡Ñam!
+                        "</p>
+                    <div class="info">
+                    <p><b>Edad:</b> 47</p>
+                    <p><b>Características: </b> Rostro desfigurado y animalesco
+                    </p>
+                    </div>
+                </div>
+                
+                <div class="ficha">
+                    <img class="profile" onclick="malaquias.play()" src="https://od.lk/s/NTdfODk2Nzg4MjJf/malaquias.jpeg">
+                    <h3 class="pixbold">Malaquías de Hildesheim</h3>
+                    <p><b> Bibliotecario
+
+                    </b></p>
+                    <p>"¿Yo? Yo entré después de que te descubrieran. 
+                        "</p>
+                    <div class="info">
+                    <p><b>Edad:</b> 56</p>
+                    <p><b>Características: </b> De expresión profunda y alto
+                    </p>
+                    </div>
+                </div>
+
+                <div class="ficha">
+                    <img class="profile" onclick="abad.play()" src="https://od.lk/s/NTdfODk2Nzg3Nzdf/abad.jpeg">
+                    <h3 class="pixbold">Abbone da Fossanova</h3>
+                    <p><b> Abad
+
+                    </b></p>
+                    <p>"Por qué no me informaste de tu pacto con el cillerero? ¡La biblioteca no está para guardar cosas privadas de los monjes!"</p>
+                    <div class="info">
+                    <p><b>Edad:</b>66</p>
+                    <p><b>Características: </b> Orgulloso de sus reliquias y bien presentado
+                    </p>
+                    </div>
+                </div>
+
+
+            </div>
+
+
             </div>
 
             <div class="opiniones">
                 <!-- all blocked hasta que se encuentren en las escenas. pixel art de nosotros, quote favorito, opinion-->
 <!--                 <p>Encuentra a los 3 monjes falsos para desbloquear las apreciaciones. </p>
- -->        
+ -->        <h2 class="pixbold" style="text-align: center;">Apreciaciones</h2>
+
             </div>
         
             <div class="comments">
@@ -966,14 +1189,37 @@ $('.item-frame').on('click', function(){
   $(this).append(c);
 })
 
-//audios
-const audio = new Audio("");
-const buttons = document.querySelectorAll("button");
+$(".angel").hover(function(){
+    var angel =  $(this).attr("id");
+    console.log(angel)
 
-buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    audio.play();
+    var text = angel + "-tl"
+    var text2 = document.getElementById(text)
+    $(text2).toggle("fast", function() {
+        trompeta.play()
   });
 });
+
+function init(){
+    bg.play()
+}
+
+document.onload = init()
+
+//audios
+const guillermo = new Audio("https://od.lk/s/NTdfODk2NzgzNTZf/guillermo.mp3");
+const adso = new Audio("https://od.lk/s/NTdfODk2NzgzNTRf/adso.ogg");
+const bernardo = new Audio("https://od.lk/s/NTdfODk2NzgzNTVf/bernardo.ogg");
+const jorge = new Audio("https://od.lk/s/NTdfODk2NzgzNTdf/jorge.ogg");
+const severino = new Audio("https://od.lk/s/NTdfODk2NzgzNjFf/severino.ogg");
+const abad = new Audio("https://od.lk/s/NTdfODk2NzgzNTNf/abad.ogg");
+const remigio = new Audio("https://od.lk/s/NTdfODk2NzgzNTlf/remigio.ogg");
+const salvatore = new Audio("https://od.lk/s/NTdfODk2NzgzNjBf/salvatore.ogg");
+const malaquias = new Audio("https://od.lk/s/NTdfODk2NzgzNThf/malaquias.ogg");
+const flip = new Audio("https://od.lk/s/NTdfODk2NzkyOTBf/flip.mp3");
+const trompeta = new Audio("https://od.lk/s/NTdfODk2ODExMDJf/trompeta.mp3")
+const bg = new Audio("https://od.lk/s/NTdfODk2ODkyOTNf/bg.mp3")
+bg.loop = true
+
 </script>
 </html>
